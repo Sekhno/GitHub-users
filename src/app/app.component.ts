@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'github-app';
+  title = 'github-users-app';
+  private readonly ICONS_PATH = '../assets/icon/';
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
+    this.initCustomIcons();
+  }
+
+  private initCustomIcons(): void {
+    // this.matIconRegistry.addSvgIcon('company-logo', this.domSanitizer.bypassSecurityTrustResourceUrl(this.ICONS_PATH + 'logo.svg'));
+  }
 }
