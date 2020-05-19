@@ -5,9 +5,15 @@
         </div>
     </div>
     <div class="users-section__content">
-        <div class="users-section__content__container" fxLayout="row" fxLayout.lt-md="column"
-            fxLayoutAlign="space-between center" fxLayoutAlign.lt-md="center center">
+        <div class="users-section__content__container" fxLayout="row wrap" fxLayoutAlign="space-between center">
             
+            <div *ngFor="let item of userArray | async" class="users-section__content__container__item"
+                fxFlex.gt-sm="24%" fxFlex.lt-md="100%">
+
+                <div><img src="{{item.avatar_url}}" alt="" class="users-section__content__container__item__image"
+                        (mouseover)="onLoadImage(titleRef)"></div>
+                <div class="users-section__content__container__item__title" #titleRef>{{item.login | uppercase}}</div>
+            </div>
         </div>
     </div>
 </div>

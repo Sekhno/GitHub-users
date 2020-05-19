@@ -23,10 +23,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.subscriptions = [
-            this.loaderService.loaderState.subscribe((state: LoaderStateInterface) => {
-                console.log(state);
-                this.isLoaderShow = state.show;
-            }),
+            this.loaderService.loaderState.subscribe((state: LoaderStateInterface) => this.isLoaderShow = state.show),
         ];
     }
 
