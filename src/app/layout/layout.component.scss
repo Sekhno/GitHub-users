@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/mixin.scss';
+
+
+.layout {
+    position: relative;
+
+    &__header {
+
+        &__mobile {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1120;
+            right: 0;
+        }
+    }
+
+    &__sidenav {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: column;
+        padding-right: 25px;
+
+        &__item {
+            color: $white-color;
+            font-size: 26px;
+            padding-top: 50px;
+
+        }
+    }
+
+    &__content {
+        position: relative;
+
+        &__mobile {
+            height: calc(100vh - 60px);
+            overflow-x: scroll;
+        }
+
+        &__progress-bar {
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixin.scss';
+
+.users-section {
+    background: $white-color 0% 0% no-repeat padding-box;
+
+    &__header {
+        @include header;
+        color: $black-color;
+    }
+}

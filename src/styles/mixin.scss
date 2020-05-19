@@ -1,0 +1,85 @@
+@import "./variables";
+
+@mixin section-container {
+    padding-left: 140px;
+    padding-right: 140px;
+
+    @media (max-width: $breakpoint-gt-md) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+@mixin small-slider-container {
+    @media (max-width: 470px) {
+        max-height: 600px;
+    }
+}
+
+@mixin client-slider-counter {
+    @media (max-width: $breakpoint-gt-xs) {
+        display: flex;
+        background: #DDDDDD 0% 0% no-repeat padding-box;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+
+        &__active {
+            background-color: $green-color;
+        }
+    }
+}
+
+@mixin container-padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@mixin carusel-counter {
+    background-color: $white-color;
+
+    height: 3px;
+    width: 120px;
+
+    &__active {
+        background-color: $green-color;
+    }
+
+    @media (max-width: $breakpoint-gt-xs) {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+    }
+}
+
+@mixin dark-grey-ground {
+    background-color: $grey-ground-color;
+}
+
+@mixin header {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 0;
+    opacity: 1;
+
+    &__title {
+        vertical-align: middle;
+        line-height: 30px;
+        height: 53px;
+        position: relative;
+        padding-top: 71px;
+    }
+
+    &__title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: $width-underline-headers;
+        height: 3px;
+        font-weight: 600;
+        background: $green-color;
+        margin-left: -$width-underline-headers / 2;
+    }
+}

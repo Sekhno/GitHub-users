@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   private initCustomIcons(): void {
-    // this.matIconRegistry.addSvgIcon('company-logo', this.domSanitizer.bypassSecurityTrustResourceUrl(this.ICONS_PATH + 'logo.svg'));
+    this.matIconRegistry.addSvgIcon('company-logo', this.domSanitizer.bypassSecurityTrustResourceUrl(this.ICONS_PATH + 'logo-github.svg'));
   }
 }

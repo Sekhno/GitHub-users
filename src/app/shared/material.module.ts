@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
     declarations: [
 
@@ -24,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatInputModule,
         MatButtonModule,
         MatSidenavModule,
+        MatProgressBarModule,
     ],
     exports: [
         MatTabsModule,
@@ -36,7 +38,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatInputModule,
         MatIconModule,
         MatButtonModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatProgressBarModule,
     ],
     providers: [],
 })
