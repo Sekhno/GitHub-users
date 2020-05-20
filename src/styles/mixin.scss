@@ -1,12 +1,10 @@
 @import "./variables";
 
 @mixin section-container {
-    padding-left: 140px;
-    padding-right: 140px;
+    padding: 0 calc(50% - 590px);
 
     @media (max-width: $breakpoint-gt-md) {
-        padding-left: 25px;
-        padding-right: 25px;
+        padding: 0 25px;
     }
 
 }

@@ -4,7 +4,8 @@
 .header {
     background-color: $grey-ground-color;
     height: 60px;
-    padding: 0 140px;
+    
+    @include section-container;
 
     @media (max-width: $breakpoint-gt-md) {
         padding: 0 16px;

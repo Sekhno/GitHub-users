@@ -1,5 +1,5 @@
 <div class="layout">
-    <div [ngClass.lt-lg]="{'layout__header__mobile': true}">
+    <div class="layout__header">
         <app-header (toggleSidenav)="sidenav.toggle()" [sidenavState]="sidenav.opened"></app-header>
     </div>
 
