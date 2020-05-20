@@ -1,11 +1,10 @@
 <mat-toolbar-row>
     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap.lt-md="16px" class="header">
         <div fxlayout="row" fxLayoutAlign="center">
-            <mat-icon svgIcon="company-logo" class="header__logo" [ngClass.lt-md]="{'header__logo__mobile': true}">
-            </mat-icon>
+            <mat-icon svgIcon="company-logo" class="header__logo" [ngClass.lt-md]="{'header__logo__mobile': true}"></mat-icon>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="30px" fxHide.lt-lg>
-            <div class="header__item"><a href="#users">Users</a></div>
+            <div class="header__item"><a routerLink="**" routerLinkActive="router-link-active" >Users</a></div>
         </div>
         <div fxShow.lt-lg fxHide.gt-md class="header__menu-icon">
             <mat-icon [style.color]="'white'" (click)="openSideNav()">{{ getMenuIcon() }}</mat-icon>

@@ -8,10 +8,10 @@
         <div class="users-section__content__container" fxLayout="row wrap" fxLayoutAlign="space-between center">
             
             <div *ngFor="let item of userArray | async" class="users-section__content__container__item"
-                fxFlex.gt-sm="24%" fxFlex.lt-md="100%">
+                fxFlex.gt-sm="24%" fxFlex.lt-md="100%" (click)="selectedUser(item, itemRef)" #itemRef>
 
                 <div><img src="{{item.avatar_url}}" alt="" class="users-section__content__container__item__image"
-                        (mouseover)="onLoadImage(titleRef)"></div>
+                        (mouseover)="onOverImage(titleRef)"></div>
                 <div class="users-section__content__container__item__title" #titleRef>{{item.login | uppercase}}</div>
             </div>
         </div>

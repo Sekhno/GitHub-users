@@ -17,7 +17,8 @@
         <mat-sidenav-content>
             <div class="layout__content" [ngClass.lt-lg]="{'layout__content__mobile': true}">
                 <mat-progress-bar class="layout__content__progress-bar" [ngClass]="{active: isLoaderShow}"></mat-progress-bar>
-                <app-users></app-users>
+                <!-- <app-users></app-users> -->
+                <router-outlet></router-outlet>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

@@ -1,0 +1,15 @@
+<div class="profile-section" id="profile-section">
+    <div class="profile-section__header">
+        <div class="profile-section__header__title">
+            <span id="title">{{profile?.name}}</span>
+        </div>
+    </div>
+    <div class="profile-section__content">
+        <div class="profile-section__content__container">
+            <div class="profile-section__content__container__item" fxFlex.gt-sm="24%" fxFlex.lt-md="100%" id="profile-item">
+                <div><img src="{{profile?.avatar_url}}" alt="" class="profile-section__content__container__item__image"></div>
+                <div class="profile-section__content__container__item__title" #titleRef>{{profile?.login | uppercase}}</div>
+            </div>
+        </div>
+    </div> 
+</div>
