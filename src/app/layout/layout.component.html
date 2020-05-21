@@ -7,7 +7,7 @@
         <mat-sidenav #sidenav mode="over" fixedInViewport="false" position="end">
 
             <div class="layout__sidenav" (click)="sidenav.toggle()">
-                <div *ngFor="let item of sidenavArray" class="layout__sidenav__item" (click)="scroll(item.sectionId)">
+                <div *ngFor="let item of sidenavArray" class="layout__sidenav__item" [routerLink]="['/']" >
                     {{item.label}}
                 </div>
             </div>

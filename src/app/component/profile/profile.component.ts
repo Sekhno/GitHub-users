@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { GithubService } from '@app/service/github.service';
 import { ProfileInterface } from '@app/models/profile';
 import { gsap } from 'gsap';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 declare const SplitText: any;
 
@@ -18,13 +19,16 @@ export class ProfileComponent implements OnInit, OnDestroy, AfterContentChecked 
     private showedAnimationTitle = false;
     private routeSubscription: Subscription;
     public profile: ProfileInterface;
-    constructor(private route: ActivatedRoute, private githubService: GithubService) {}
+    public safeSrc: SafeResourceUrl = null;
+    constructor(private route: ActivatedRoute, private githubService: GithubService, private sanitizer: DomSanitizer) {}
 
     ngOnInit(): void {
         this.routeSubscription = this.route.params.subscribe((res: {id: string}) => {
             setTimeout(() =>{
                 this.githubService.initGithubUserBy(res.id).subscribe((user: ProfileInterface) => {
+                    console.log(user);
                     this.profile = user;
+                    this.getSafeResourceUrl();
                     let cardItem = document.getElementById('profile-item');
                     if (cardItem) {
                         let cardRect = cardItem.getBoundingClientRect(),
@@ -74,5 +78,12 @@ export class ProfileComponent implements OnInit, OnDestroy, AfterContentChecked 
             this.showedAnimationTitle = true;
         }
             
+    }
+
+    private getSafeResourceUrl = () => {
+        if (!this.profile) return null;
+        if (!this.safeSrc) {
+            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.profile.blog);
+        }
     }
 }

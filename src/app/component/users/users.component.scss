@@ -50,5 +50,9 @@
                 border: 1px solid $green-color;
             }
         }
+
+        &__empty {
+            @include header;
+        }
     }
 }

@@ -23,7 +23,9 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.subscriptions = [
-            this.loaderService.loaderState.subscribe((state: LoaderStateInterface) => this.isLoaderShow = state.show),
+            this.loaderService.loaderState.subscribe((state: LoaderStateInterface) => {
+                setTimeout(() => this.isLoaderShow = state.show)
+            }),
         ];
     }
 
@@ -35,8 +37,10 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     public scroll(id: string) {
         let el = document.getElementById(id);
-        el.scrollIntoView();
-        el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+            el.scrollIntoView();
+            el.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
 }

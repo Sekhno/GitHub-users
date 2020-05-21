@@ -10,6 +10,29 @@
                 <div><img src="{{profile?.avatar_url}}" alt="" class="profile-section__content__container__item__image"></div>
                 <div class="profile-section__content__container__item__title" #titleRef>{{profile?.login | uppercase}}</div>
             </div>
+            <div class="profile-section__content__container__description" fxFlex.gt-sm="76%" fxFlex.lt-md="100%"
+                fxLayoutAlign="space-around center">
+                <table *ngIf="profile">
+                    <tr><td>Location</td><td>{{profile.location}}</td></tr>
+                    <tr><td>E-mail</td><td>{{profile.email}}</td></tr>
+                    <tr><td>Followers</td><td>{{profile.followers}}</td></tr>
+                    <tr><td>Company</td><td>{{profile.company}}</td></tr>
+                    <tr><td>Blog</td><td>{{profile.blog}}</td></tr>
+                    <tr><td>Public repos</td><td>{{profile.public_repos}}</td></tr>
+                    <tr><td>Public gists</td><td>{{profile.public_gists}}</td></tr>
+                    <tr><td>Followers</td><td>{{profile.followers}}</td></tr>
+                    <tr><td>Following</td><td>{{profile.following}}</td></tr>
+                    <tr><td>Created</td><td>{{profile.created_at | date}}</td></tr>
+                    <tr>
+                        <td>Updated at</td>
+                        <td>{{profile.updated_at | date}}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <div fxLayout="row">
+            <iframe *ngIf="safeSrc" [src]="safeSrc" frameborder="0" fxFlex="100%"></iframe>
+        </div>
+        
     </div> 
 </div>

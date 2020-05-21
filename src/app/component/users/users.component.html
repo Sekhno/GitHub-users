@@ -15,5 +15,6 @@
                 <div class="users-section__content__container__item__title" #titleRef>{{item.login | uppercase}}</div>
             </div>
         </div>
+         <div *ngIf="!(userArray | async)?.length" class="users-section__content__empty">Users list empty! Please check conect internet!</div>
     </div>
 </div>
