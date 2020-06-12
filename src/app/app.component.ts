@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'github-users-app';
-  private readonly ICONS_PATH = '../assets/icon/';
+  private readonly ICONS_PATH = '@app/assets/icon/';
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
     this.initCustomIcons();
   }

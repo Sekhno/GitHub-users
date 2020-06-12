@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0 --port=1111",
+    "start": "ng serve --port=1111",
     "build": "ng build --prod --aot --extract-css --base-href ./",
     "test": "ng test",
     "lint": "ng lint",

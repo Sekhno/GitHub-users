@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '@app/shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { UsersComponent } from './users/users.component';
@@ -12,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
     ],
     imports: [
         SharedModule,
+        RouterModule
     ],
     exports: [
         HeaderComponent,
